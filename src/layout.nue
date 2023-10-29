@@ -1,39 +1,31 @@
-
 <html>
-  <meta charset="utf-8">
-  <meta name="generator" content="Nue (nuejs.org)">
-  <meta name="date.updated" content="{ timestamp.toISOString() }">
-  <meta name="viewport" content="width=device-width">
-  <link rel="shortcut icon" href="{ favicon }">
+  <meta charset="utf-8" />
+  <meta name="generator" content="Nue (nuejs.org)" />
+  <meta name="date.updated" content="{ timestamp.toISOString() }" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon" href="{ favicon }" />
   <title>{ title }</title>
-  <style>{ primary_css }</style>
+  <style>
+    { primary_css }
+  </style>
 
-  <!-- header component (server-side) -->
-  <site-header :logo="logo" :github="github"/>
+  <logo :img_src="logo" href="#" />
 
-  <main>
-    <header>
-      <h1>{ heading }</h1>
-      <p>{ description }</p>
-    </header>
+  <counter />
 
-    <article>
-      <item-list :items="projects" class="grid"/>
-    </article>
-
-    <footer>
-      <img :src="favicon" class="icon">
-    </footer>
-  </main>
-
-  <!-- theme selector dialog (client-side component)-->
-  <theme-selector :themes="themes" id="themes"/>
+  <image-block
+    image_src="/img/sample.jpg"
+    caption="This example demonstrates a universal Nue component (Image from Unsplash)"
+  />
 
   <!-- setup all client-side/reactive components  -->
   <script type="module" src="setup.js"></script>
 
   <!-- secondary CSS -->
-  <link :for="href in secondary_css" :href="href" rel="stylesheet" fetchpriority="low">
-
+  <link
+    :for="href in secondary_css"
+    :href="href"
+    rel="stylesheet"
+    fetchpriority="low"
+  />
 </html>
-

@@ -1,0 +1,5 @@
+<div @name="logo">
+  <a :href="href">
+    <img class="logo" :src="img_src" />
+  </a>
+</div>

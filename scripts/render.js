@@ -5,7 +5,7 @@
   https://nuejs.org/docs/nuejs/server-components.html
 */
 
-import { parse, render } from 'nuejs-core'
+import { parse, render, renderFile } from 'nuejs-core'
 import { promises as fs } from 'node:fs'
 import yaml from 'js-yaml'
 
@@ -39,4 +39,27 @@ export default async function () {
   await fs.writeFile('./www/index.html', html)
   await fs.writeFile('./www/404.html', html404)
   console.log('wrote', 'www/index.html, www/404.html')
+
+  // grab the logo.nue markup to demo a server component
+  let logoComponentHtml = await renderServerComponent(
+    './src/components/logo.nue',
+    {
+      href: '#',
+      img_src: 'img/logo.svg',
+    }
+  )
+
+  // log the logo.nue markup in the server component
+  console.log(logoComponentHtml)
+}
+
+async function renderServerComponent(url, ops) {
+  try {
+    // Render the product card component with some product data
+    const serverComponentHtml = await renderFile(url, ops)
+    return serverComponentHtml
+  } catch (error) {
+    console.error(error)
+    return '' // or handle the error as needed
+  }
 }
