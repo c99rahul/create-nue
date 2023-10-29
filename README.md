@@ -1,3 +1,4 @@
+**A fork of [NueJs](//github.com/nuejs/create-nue) to explore its basics**
 
 <a href="https://nuejs.org">
   <img src="https://nuejs.org/global/logo/logo.png" width="275" alt="Nue logo">
