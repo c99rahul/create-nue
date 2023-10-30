@@ -9,7 +9,7 @@
     { primary_css }
   </style>
 
-  <logo :img_src="logo" href="#" />
+  <logo img_src="img/logo.svg" href="//w3bits.com" />
 
   <counter />
 
